@@ -1,0 +1,24 @@
+Desenvolver uma imagem docker que quando executada mostre na tela a msg 'MLOps Puc Minas'.
+
+A função deve ser criada em python, e o conteúdo deve ser postado no git (Pode ser Gitlab ou Github). Lembrando que o repositório deve ser público para que eu consiga ter acesso ao conteúdo.
+
+A imagem docker deve conter também uma biblioteca python instalada. A versão do biblioteca não importa.
+
+--cod:
+
+--Dockerfile:
+FROM python:latest
+COPY app.py /app.py
+CMD ["python", "/app.py"]
+
+docker build -t mlops-puc-minas-image .
+
+--Git:
+git init
+git add .
+git commit -m "Primeiro commit"
+git remote add origin
+git push -u origin master
+
+docker tag mlops-puc-minas-image kirkgal/SEU_USUARIO_NO_DOCKERHUB/mlops-puc-minas-image
+docker push SEU_USUARIO_NO_DOCKERHUB/mlops-puc-minas-image
